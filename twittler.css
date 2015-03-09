@@ -1,0 +1,66 @@
+body{
+	background-color: #00BFFF;
+	color: #FFFFFF;
+	text-align: center;
+	display: block;
+	float: center;
+
+}
+
+h1{
+	font-size: 3.0em;
+	font-family: "Arial";
+	text-shadow: 2px 2px #BBBBBB;
+	font-style: italic;
+	color: #00BFFF;
+	text-align: center;
+	border: 5px solid ;
+	border-color: #BBBBBB;
+	background-color: white;
+	display: block;
+}
+
+
+ul {
+	border: 3px solid #BBBBBB;
+	margin: 20px;
+	padding: 3px;
+	text-decoration: none;
+	list-style-type: none;
+	display: inline-block;
+	background-color: white;
+	width: 85%;
+	color:black;
+}
+
+ul li {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 2px;
+	display: block;
+	text-align: left;
+	color: black;
+	font-family: "Tahoma";
+	border: 1px solid #BBBBBB;
+
+}
+
+.tweets {
+	border: 3px solid white;
+}
+
+div{
+	margin-top: 10px;
+	display: block inline;
+}
+
+button {
+	font-size: 1.5em;
+	border: 3px solid white;
+	border-radius: 6px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	margin-bottom: 5px;
+	display:block;
+}
