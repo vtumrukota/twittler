@@ -10,11 +10,7 @@
 
     <button type="button">Refresh Tweets</button>
 
-    <main>
-      <ul>
-        
-      </ul>
-    </main>
+   <ul></ul>
 
  
     <script>
@@ -22,28 +18,70 @@
       $(document).ready(function(){
         var $body = $('body');
         var $tweetdisplay = $('ul');
+       
         
         var refreshTweets = function(){
           var index = streams.home.length -1;
 
           for(var i=0; i<10; index--, i++){
             var $tweet = $('<li/>');
-            var $time = $('ul li p');
-            var usertweet = streams.home[index];
+            var $handle = $('<a/>');
+            var $time = $('<p/>');
             
-            $tweet.text('@' + usertweet.user + ': ' + usertweet.message);
+            var tweet = streams.home[index];
+
+            var username = '@'+tweet.user;   //create clickable Handle
+            $handle.text(username);
+            $handle.attr("id", tweet.user);
+          
+            $handle.appendTo($tweet);
+
+            $tweet.append(': ' + tweet.message);  //Add message to li
+
+            var timestamp = '[' + tweet.created_at + ']'; //add timestamp
+            $time.text(timestamp);
+            $time.appendTo($tweet);
 
             $tweet.appendTo($tweetdisplay);
 
           }
-        }        
-          
+        }    
+
+         refreshTweets();
+
          $('button').click(function(){
           $('ul li').remove();
           refreshTweets();
          });
 
-         refreshTweets();
+
+          $(document).on('click', 'ul li a', function(){
+           var handlename = $(this).attr("id");
+           $('ul li').remove();
+           
+           for(x=streams.users[handlename].length-1; 0<x; x--){
+            
+            var $tweet = $('<li/>');
+            var $handle = $('<a/>');
+            var $time = $('<p/>');
+            
+            var tweet = streams.users[handlename][x];
+
+            var username = '@'+tweet.user;   //create clickable Handle
+            $handle.text(username);
+            $handle.attr("id", tweet.user);
+          
+            $handle.appendTo($tweet);
+
+            $tweet.append(': ' + tweet.message);  //Add message to li
+
+            var timestamp = '[' + tweet.created_at + ']'; //add timestamp
+            $time.text(timestamp);
+            $time.appendTo($tweet);
+
+            $tweet.appendTo($tweetdisplay);
+           }
+         });
 
         });
       

@@ -14,7 +14,7 @@ h1{
 	font-style: italic;
 	color: #00BFFF;
 	text-align: center;
-	border: 5px solid ;
+	border: 8px solid ;
 	border-color: #BBBBBB;
 	background-color: white;
 	display: block;
@@ -22,7 +22,7 @@ h1{
 
 
 ul {
-	border: 3px solid #BBBBBB;
+	border: 5px solid #BBBBBB;
 	margin: 20px;
 	padding: 3px;
 	text-decoration: none;
@@ -42,12 +42,27 @@ ul li {
 	color: black;
 	font-family: "Tahoma";
 	border: 1px solid #BBBBBB;
+	height: 42px;
 
 }
 
-.tweets {
-	border: 3px solid white;
+ul li a {
+	font-weight: bold;
+	margin-left: 2px;
 }
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+ul li p {
+	text-align: right;
+	font-size: 0.85em;
+	margin-right: 5px;
+	font-style: italic;
+}
+
 
 div{
 	margin-top: 10px;
